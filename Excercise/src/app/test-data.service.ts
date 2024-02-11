@@ -13,3 +13,7 @@ export class TestDataService {
     return this.http.get("./assets/mockData.json")
   }
 }
+
+// 1. Zawsze importowac HttpClient
+// 2. zapis zawsze this.http.GET/POST/PUT/DELETE("ENDPOINT")
+// 3. przy funkcji zawsze dopisac Observable<any>

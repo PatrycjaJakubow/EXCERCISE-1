@@ -9,11 +9,23 @@ import { OnInit } from '@angular/core';
 })
 export class AppComponent {
 
+  retrievedData: any;
   constructor(private testDataService: TestDataService) { }
 
   ngOnInit() {
-  retrievedData: any;
+    this.testDataService.getData().subscribe(
+      (response) => {
+        console.log(response),
+        this.retrievedData = response;
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
   }
+
+  // jak pobrac dane z serwisu? 
+  // 1. w ngOnInit() { } zawolac this.NAZWASERWISU.NazwaFunkcjiZSerwisu().subscribe(dopisac co w przypadku response i co w error)
 
   myInput = '';
 
