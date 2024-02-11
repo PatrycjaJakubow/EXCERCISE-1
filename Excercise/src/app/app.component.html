@@ -1,15 +1,2 @@
-<div>
-  <h2>Issue 2</h2>
-<label for="input1">My input </label>
-<input type="" id="input1" [(ngModel)] = "myInput"> 
-  <p> {{ myInput }}</p>
-  <button (click)="getMyInput()">Get input</button>
-</div>
-
-<div>
-  <h2>Issue 3</h2>
-  <h3>Retrieve data</h3>
-  <p>Name: {{ retrievedData.name }} </p>
-  <p>Location: {{ retrievedData.location }} </p>
-  <p>ID: {{ retrievedData.id }}</p>
-</div>
+<h2>Parent component</h2>
+<app-test-child [SampleText] = "'sample text'"></app-test-child>
