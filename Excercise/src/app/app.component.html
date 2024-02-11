@@ -1,2 +1,11 @@
 <h2>Parent component</h2>
-<app-test-child [SampleText] = "'sample text'"></app-test-child>
+<app-test-child [sampleText] = "'hello world'" (trigger)="handleTrigger($event)"></app-test-child>
+
+<!-- 1. selector tego childu
+2. nazwa objektu w [] 
+3. to, co ma sie pokazac, jest w " 'string' "
+
+
+4. musimy dodac trigger, ktory w parencie pokaze, co bierzemy z childu. -->
+
+<p>Message from child is: {{ messageFromChild }} </p>

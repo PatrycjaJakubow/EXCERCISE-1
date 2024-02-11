@@ -8,6 +8,11 @@ import { OnInit } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+messageFromChild!: string; //wiadomosc od childu musi byc w parencie zapisany w objekcie
+
+handleTrigger(message: string) {
+  this.messageFromChild = message
+}
 
 }
 
