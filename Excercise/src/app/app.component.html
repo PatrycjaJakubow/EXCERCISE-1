@@ -1,4 +1,4 @@
-<label for="">My input</label>
-<input type="" [ngModel] = "myInput">
+<label for="input1">My input </label>
+<input type="" id="input1" [(ngModel)] = "myInput"> 
   <p> {{ myInput }}</p>
-  <button></button>
+  <button (click)="getMyInput()">Get input</button>
