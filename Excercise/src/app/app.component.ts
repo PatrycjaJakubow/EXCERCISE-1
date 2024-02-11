@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { TestDataService } from './test-data.service';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+  constructor(private testDataService: TestDataService) { }
+
+  ngOnInit() {
+  retrievedData: any;
+  }
+
   myInput = '';
 
   getMyInput(){
