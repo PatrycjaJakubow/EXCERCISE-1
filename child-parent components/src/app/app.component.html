@@ -1,0 +1,16 @@
+<div>
+  <label for="input1">Numer 1</label>
+  <input type="number" id="input1" [(ngModel)] = "formInput1">
+
+  <label for="input2">Numer 2</label>
+  <input type="number" id="input2" [(ngModel)] = "formInput2">
+
+  <label for="input3">Numer 3</label>
+  <input type="number" id="input3" [(ngModel)] = "formInput3">
+
+  <app-child [childInput1] = "formInput1" [childInput2] = "formInput2" [childInput3] = "formInput3" (totojemojoutputzchildu)="spracujSpravu($event)" (druhyoutput)="spracujDruhuSpravu($event)"></app-child>
+
+  <!-- <child selector [nazovObjektuvChilde] = "nazov objektu v parente", pocet inputov podla toho kolko treba, (nazov outputu v childe) = "nazov funkcie v parente ktora ten output spracuje" </koncovy selector childu> -->
+  <p>Wynik z childu to: {{ vysledekZChildu }}</p>
+  <p>Wynik 2 z childu to: {{ vysledekZChildu2 }}</p>
+</div>
