@@ -1,0 +1,5 @@
+<label for="barcode">Barcode</label>
+<input type="number" name="" id="barcode" [(ngModel)] = "spravaprochild">
+
+<app-child [totoposlatdochildu] = "spravaprochild" (outputzchildu)="spracujBarcode($event)"></app-child>
+<p>{{ zpravazchildu }}</p>

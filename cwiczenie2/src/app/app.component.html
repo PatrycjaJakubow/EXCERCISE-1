@@ -1,0 +1,27 @@
+<label for="nameInput">Name</label>
+<input type="text" id="nameInput" [(ngModel)] = "nameInputContent">
+<!-- Tu mame prvy input, kde budeme davat meno. Tak ja ten input nazvem nameInput, nie iba input1, aby to bolo jasnejsie. Tym padom aj 
+label potrebuje to for pre to spravne. Je to podstatne jasnejsie teraz. Druhy krok je, ze chcem to co tam ten user napise ulozit do nejakeho
+objektu. Tak si ho najprv vytvorim v ts. A do toho objektu ulozim to co ten user napise. Takze to co user napise ide do nameInputContent
+ -->
+<!-- Teraz chcem ten objekt poslat do childu. Child musi mat svoj vlastny objekt, do ktoreho si to ulozi. Tak si ten objekt vytvorim najprv. -->
+
+<label for="ageInput">Age</label>
+<input type="text" id="ageInput" [(ngModel)] = "ageInputContent">
+
+<label for="locationInput">Location</label>
+<input type="text" id="locationInput" [(ngModel)] = "locationInputContent">
+
+<app-child [receivedNameContent] = "nameInputContent" [receivedAgeContent] = "ageInputContent" [receivedLocationContent] = "locationInputContent" 
+(sentenceFromChild)="handleOutput($event)"></app-child>
+
+<!-- tak ked mam nameInput ulozeny v parente, mam objekt v childe kde ho ulozim, tak to tam poslem do toho childu.
+Najprv si vyberiem ten objekt z childu, do ktoreho to budeme ukladat, a potom v "" specifikujem objekt, ktory tam chcem poslat. 
+
+
+Akonahle mame output v childe hotovy, musime ho dat to <app-child>. Najprv zadame v () nazov toho objektu ktory child posle, a za nim tu funkciu, 
+  ktoru s tym objektom vykonname, napr uloz niekde do objektu v parente. Takze ked ten output dojde v objekte sentenceFromChild, 
+  spustime funkciu handleOutput.-->
+<p> {{ outputFromChild }}</p>
+
+
