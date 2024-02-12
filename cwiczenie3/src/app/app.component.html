@@ -1,0 +1,19 @@
+<label for="denInput">Jaky je den? </label>
+<input type="text" id="denInput" [(ngModel)] = "objektDen">
+
+<label for="receptInput">Nazev receptu </label>
+<input type="text" id="receptInput" [(ngModel)] = "objektRecept">
+
+<label for="kilogramyInput">Ile kilogramow? </label>
+<input type="text" id="kilogramyInput" [(ngModel)] = "objektKilogramy">
+
+<label for="osobyInput">Liczba osob </label>
+<input type="text" id="osobyInput" [(ngModel)] = "objektOsoby">
+
+<app-child [receivedDen] = "objektDen" [receivedRecept] = "objektRecept" [receivedKilogramy] = "objektKilogramy" [receivedOsoby] = "objektOsoby"
+(zchilddoparent)="funkcezparentu($event)"></app-child>
+
+
+
+
+
