@@ -1,0 +1,20 @@
+
+<div>
+    <h2>Exercise 5</h2>
+    <label for="names">What's your name?</label>
+    <input type="text" id="names" [(ngModel)]="namesObject">
+    
+    <ng-template [ngIf]="namesObject === 'Peter'">
+      <p>Hello Peter</p>
+    </ng-template>
+  
+    <ng-template [ngIf]="namesObject === 'Patrycja'">
+      <p>Hello Patrycja</p>
+    </ng-template>
+  
+    <ng-template [ngIf]="namesObject !== 'Peter' && namesObject !== 'Patrycja'">
+      <p>I don't know you</p>
+    </ng-template>
+  </div>
+
+  <!-- WERSJA 2 -->

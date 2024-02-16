@@ -1,0 +1,11 @@
+.kwadraciki {
+    display: inline-block;
+    border: 3px dotted red;
+    text-align: center;
+    margin:10px;
+    padding:5px;
+}
+
+.container {
+    text-align: center;
+}
