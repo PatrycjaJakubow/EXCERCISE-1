@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "title": "Grocery Shopping",
+      "detail": "detail1"
+    },
+    {
+      "id": 2,
+      "title": "Read Angular Documentation",
+      "detail": "detail2"
+    },
+    {
+      "id": 3,
+      "title": "Exercise",
+      "detail": "detail3"
+    },
+    {
+      "id": 4,
+      "title": "Prepare Weekly Report",
+      "detail": "detail4"
+    },
+    {
+      "id": 5,
+      "title": "Team Meeting",
+      "detail": "detail5"
+    },
+    {
+      "id": 6,
+      "title": "Plan Weekend Trip",
+      "detail": "detail6"
+    },
+    {
+      "id": 7,
+      "title": "Call with Client",
+      "detail": "detail7"
+    },
+    {
+      "id": 8,
+      "title": "Write Blog Post",
+      "detail": "detail8"
+    }
+  ]

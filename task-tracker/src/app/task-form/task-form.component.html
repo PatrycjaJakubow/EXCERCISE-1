@@ -1,0 +1,17 @@
+<div>
+    <label for="name">Label for nameInput </label>
+    <input type="text" id="name" [(ngModel)]="nameInput">
+</div>
+    
+    <div>
+        <h2>Task List 3</h2>
+        <li *ngFor="let list of retrievedData">
+        {{ list.title }}
+        <app-modal>
+            <p>ID: {{ list.id }} </p>
+            <h2>Title: {{ list.title }} </h2>
+            <p>Detail: {{ list.detail }} </p>
+        </app-modal>
+    <button (click)="openModal(list)">Open Task Details</button>
+        </li>
+    </div>

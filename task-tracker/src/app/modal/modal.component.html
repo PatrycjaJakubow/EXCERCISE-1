@@ -1,0 +1,8 @@
+<div class="modal" *ngIf="isVisible">
+  <div class="modal-content">
+      <span class="close-button" (click)="close()">&times;</span>
+      <p>ID: {{ list.id }}</p>
+      <h2>Title: {{ list.title }}</h2>
+      <p>Detail: {{ list.detail }}</p>
+  </div>
+</div>
