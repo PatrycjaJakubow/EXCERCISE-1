@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Angular Development Tips",
+        "content": "Learn some useful tips and tricks for developing applications with Angular...",
+        "author": "John Doe",
+        "date": "2024-02-19"
+    },
+    {
+        "id": 2,
+        "title": "Understanding Two-Way Data Binding",
+        "content": "Two-way data binding in Angular allows for seamless synchronization between the model and the view...",
+        "author": "Jane Smith",
+        "date": "2024-02-18"
+    },
+    {
+        "id": 3,
+        "title": "Building Responsive Layouts with Angular",
+        "content": "Responsive design is crucial for any modern web application. In this post, we explore how to build responsive layouts using Angular...",
+        "author": "Alice Johnson",
+        "date": "2024-02-17"
+    }
+]
