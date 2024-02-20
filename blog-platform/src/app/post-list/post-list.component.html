@@ -1,8 +1,6 @@
 <div class="list">
-   <ul *ngFor="let list of listItems">
-<li>ID: {{ list.id }}</li>
-<li>Title: {{ list.title }}</li>
-<li>Content: {{ list.content }}</li>
-<li>Author: {{ list.author }}</li>
-<li>Date: {{ list.date}} </li></ul>
-</div>
+    <ul *ngFor="let list of listItems">
+      <li>Title: {{ list.title }}</li>
+      <button (click)="openModal(list)">Open Modal</button>
+    </ul>
+  </div>
