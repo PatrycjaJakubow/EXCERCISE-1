@@ -1,7 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit, Input } from '@angular/core';
 import { PostServiceService } from '../post-service.service';
-import { OnInit } from '@angular/core';
-import { Input } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 
 @Component({

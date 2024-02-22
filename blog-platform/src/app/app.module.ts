@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PostListComponent } from './post-list/post-list.component';
 import { ModalComponent } from './modal/modal.component';
+import { ColorChangeDirective } from './color-change.directive';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ModalComponent } from './modal/modal.component';
     AppComponent,
     PostFormComponent,
     PostListComponent,
-    ModalComponent
+    ModalComponent,
+    ColorChangeDirective
     
   ],
   imports: [

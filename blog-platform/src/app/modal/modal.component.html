@@ -1,7 +1,9 @@
 <div class="modal" *ngIf="isVisible">
   <div class="modal-content">
-    <ul>
+    <span class="close-button" (click)="close()">&times;</span>
+    <ul appColorChange>
       <li>ID: {{ list.id }}</li>
+      <li>Title: {{list.title }}</li>
       <li>Content: {{ list.content }}</li>
       <li>Author: {{ list.author }}</li>
       <li>Date: {{ list.date }}</li>

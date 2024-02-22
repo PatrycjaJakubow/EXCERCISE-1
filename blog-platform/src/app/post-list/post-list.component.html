@@ -1,6 +1,7 @@
 <div class="list">
     <ul *ngFor="let list of listItems">
       <li>Title: {{ list.title }}</li>
+      <app-modal></app-modal>
       <button (click)="openModal(list)">Open Modal</button>
     </ul>
   </div>
