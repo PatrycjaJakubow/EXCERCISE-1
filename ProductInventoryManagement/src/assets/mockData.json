@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Laptop Pro 15",
+        "price": 1500,
+        "category": "Electronics",
+        "quantity": 20
+    },
+    {
+        "name": "Wireless Headphones",
+        "price": 200,
+        "category": "Accessories",
+        "quantity": 35
+    },
+    {
+        "name": "Smartphone X2",
+        "price": 900,
+        "category": "Electronics",
+        "quantity": 40
+    },
+    {
+        "name": "Ergonomic Office Chair",
+        "price": 300,
+        "category": "Furniture",
+        "quantity": 15
+    },
+    {
+        "name": "Bluetooth Speaker",
+        "price": 150,
+        "category": "Accessories",
+        "quantity": 50
+    },
+    {
+        "name": "Stainless Steel Water Bottle",
+        "price": 25,
+        "category": "Home Goods",
+        "quantity": 100
+    },
+    {
+        "name": "Running Shoes",
+        "price": 120,
+        "category": "Apparel",
+        "quantity": 60
+    },
+    {
+        "name": "Yoga Mat",
+        "price": 40,
+        "category": "Sports",
+        "quantity": 30
+    },
+    {
+        "name": "Smart Watch",
+        "price": 350,
+        "category": "Electronics",
+        "quantity": 25
+    },
+    {
+        "name": "Organic Dog Food",
+        "price": 80,
+        "category": "Pet Supplies",
+        "quantity": 45
+    }
+]

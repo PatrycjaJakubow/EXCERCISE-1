@@ -1,0 +1,4 @@
+<div>
+    <app-product-item *ngFor="let product of productItemsLists" [product]="product"
+    (delete)="handleDelete($event)" (edit)="handleEdit($event)"></app-product-item>
+</div>
