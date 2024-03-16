@@ -1,0 +1,6 @@
+<h2>List of books</h2>
+<li *ngFor="let book of books">
+{{ book.title }}
+{{ book.author }}
+<div *ngIf="book.availability === 'unavailable'">No books are available</div>
+</li>

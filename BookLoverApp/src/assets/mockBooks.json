@@ -1,0 +1,7 @@
+[
+    { "title": "Book 1", "author": "Author 1", "availability": "available" },
+    { "title": "Book 2", "author": "Author 2", "availability": "unavailable" },
+    { "title": "Book 3", "author": "Author 3", "availability": "unavailable" },
+    { "title": "Book 4", "author": "Author 4", "availability": "available" },
+    { "title": "Book 5", "author": "Author 5", "availability": "unavailable" }
+]
