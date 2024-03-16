@@ -10,6 +10,9 @@ export class ToggleViewComponent implements OnInit {
 
 books: any[] = []; // Initialize as empty array
 
+list!: any;
+grid!: any; 
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -21,5 +24,15 @@ books: any[] = []; // Initialize as empty array
         console.error('Error fetching books:', error);
       }
     );
+  }
+
+  showList(): void {
+    this.list = true;
+    this.grid = false;
+  }
+
+  showGrid(): void {
+    this.list = false;
+    this.grid = true;
   }
 }

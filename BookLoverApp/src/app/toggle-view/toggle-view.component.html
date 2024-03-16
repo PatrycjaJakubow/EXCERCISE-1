@@ -1,8 +1,11 @@
 <div>
-    <button><i class="fas fa-list"></i></button>
-    <button><i class="fa-solid fa-table-cells-large"></i></button>
+    <button class="list-button" (click)="showList()"><i class="fas fa-list"></i></button>
+    <button class="grid-button" (click)="showGrid()"><i class="fa-solid fa-table-cells-large"></i></button>
 </div>
 
+
+<div *ngIf="list else grid"></div>
+<ng-template #list>
 <div>
     <table>
         <thead>
@@ -21,3 +24,15 @@
         </tbody>
       </table>
 </div>
+</ng-template>
+
+
+<ng-template #grid>
+<div class="grid-container">
+    <div class="grid-item" *ngFor="let book of books">
+      <div class="title">{{ book.title }}</div>
+      <div class="author">{{ book.author }}</div>
+      <div class="availability">{{ book.availability }}</div>
+    </div>
+  </div>
+</ng-template>

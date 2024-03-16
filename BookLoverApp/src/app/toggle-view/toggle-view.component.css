@@ -1,0 +1,22 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    grid-gap: 10px; /* Gap between grid items */
+  }
+  
+  .grid-item {
+    border: 1px solid #ccc; /* Border around each grid item */
+    padding: 10px; /* Padding inside each grid item */
+  }
+  
+  .title {
+    font-weight: bold; /* Make the title bold */
+  }
+  
+  .author {
+    font-style: italic; /* Make the author italic */
+  }
+  
+  .availability {
+    color: #007bff; /* Set color for availability status */
+  }
