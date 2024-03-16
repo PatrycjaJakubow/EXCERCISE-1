@@ -1,0 +1,23 @@
+<div>
+    <button><i class="fas fa-list"></i></button>
+    <button><i class="fa-solid fa-table-cells-large"></i></button>
+</div>
+
+<div>
+    <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Availability Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books">
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.availability }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
