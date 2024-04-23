@@ -1,6 +1,21 @@
-<h2>List of books</h2>
-<li *ngFor="let book of books">
-{{ book.title }}
-{{ book.author }}
-<div *ngIf="book.availability === 'unavailable'">No books are available</div>
-</li>
+<div class="book-list-container">
+  <h2>List of books</h2>
+  <mat-form-field class="search" [formGroup]="filterForm">
+    <mat-label>Search: </mat-label>
+    <input matInput type="text"  formControlName="searchFilter" placeholder="Search">
+  </mat-form-field>
+  <ul>
+    <mat-list>
+      <mat-list-item *ngFor="let post of books.slice(0, 10) | filter: 'title': filterForm.get('searchFilter')?.value">
+        {{ post.title }} - {{ post.author }}
+        <div *ngIf="post.has_audio === 'no' || post.has_audio === false" class="no-books" appRandomColor> - No audio is available</div>
+      </mat-list-item>
+    </mat-list>
+  </ul>
+
+  <app-book-form (bookAdded)="onBookAdded($event)"></app-book-form>
+</div>
+
+<app-toggle-view></app-toggle-view>
+
+

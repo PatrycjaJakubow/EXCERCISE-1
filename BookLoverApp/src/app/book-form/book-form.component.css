@@ -1,0 +1,44 @@
+/* li { 
+    display: inline-block;
+}
+
+.new-book {
+    padding-top: 2%;
+}
+
+.new-book-input {
+    width: 90%;
+} */
+
+.new-book {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+  }
+  
+  .new-book li {
+    list-style-type: none;
+    margin-bottom: 10px;
+  }
+  
+  .new-book-input {
+    width: calc(100% - 40px); /* Subtract padding */
+    margin-bottom: 10px;
+  }
+  
+  .new-book button {
+    background-color: #ff7f50; /* Coral */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .new-book button:hover {
+    background-color: #ff6347; /* Tomato */
+  }
+  

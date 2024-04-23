@@ -1,38 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-toggle-view',
   templateUrl: './toggle-view.component.html',
-  styleUrl: './toggle-view.component.css'
+  styleUrls: ['./toggle-view.component.css']
 })
 export class ToggleViewComponent implements OnInit {
+  books: any[] = []; 
+  isListView: boolean = true; 
+  titles: any[] = []; 
+  isEditing: boolean = false;
 
-books: any[] = []; // Initialize as empty array
-
-list!: any;
-grid!: any; 
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private bookService: BookService) {}
 
   ngOnInit(): void {
     this.http.get<any[]>('assets/mockBooks.json').subscribe(
       (response) => {
-        this.books = response; // Assign the response to the books property
+        this.books = response;
       },
       (error) => {
         console.error('Error fetching books:', error);
       }
     );
+
+    this.bookService.getUsers().subscribe(
+      title => this.titles = title,
+      error => console.error('Error fetching users:', error)
+    );
+  }
+
+  editRow(title: any): void {
+    this.isEditing = true;
+  }
+
+  saveRow(title: any): void {
+    // Save changes to the backend or update local data
+    this.isEditing = false;
+  }
+
+  cancelEdit(): void {
+    // Discard changes and revert to read-only mode
+    this.isEditing = false;
   }
 
   showList(): void {
-    this.list = true;
-    this.grid = false;
+    this.isListView = true;
   }
 
   showGrid(): void {
-    this.list = false;
-    this.grid = true;
+    this.isListView = false;
   }
 }

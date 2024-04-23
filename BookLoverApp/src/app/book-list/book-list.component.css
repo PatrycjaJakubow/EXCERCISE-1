@@ -1,0 +1,48 @@
+/* h2 {
+    text-align: center;
+}
+
+mat-list {
+    width: 20%;
+}
+mat-list-item {
+    border: 2px dotted black;
+    text-align: center;
+}
+
+
+.no-books {
+    font-size: 12px;
+}
+.search { 
+    width: 20%;
+   
+}
+
+.book-list-container {
+    width: 80%;
+    margin: auto;
+} */
+
+
+.book-list-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .book-list-container h2 {
+    color: #333;
+  }
+  
+  .search {
+    margin: 20px auto;
+    width: 70%;
+  }
+  
+  .no-books {
+    font-size: 12px;
+    display: inline-block;
+    color: red;
+  }

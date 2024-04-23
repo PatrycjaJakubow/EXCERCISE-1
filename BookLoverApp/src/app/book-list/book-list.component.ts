@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-book-list',
@@ -7,14 +9,21 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  books: any[] = []; // Initialize as empty array
+  books: any[] = [];
+  filterForm: FormGroup;
+  newBook: any = null; // Variable to store the newly added book
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private fb: FormBuilder, private bookService: BookService) {
+    this.filterForm = this.fb.group({
+      searchFilter: ['']
+    });
+  }
 
   ngOnInit(): void {
-    this.http.get<any[]>('assets/mockBooks.json').subscribe(
+    // Fetch existing books from the service
+    this.bookService.getBooks().subscribe(
       (response) => {
-        this.books = response; // Assign the response to the books property
+        this.books = response;
       },
       (error) => {
         console.error('Error fetching books:', error);
@@ -22,5 +31,12 @@ export class BookListComponent implements OnInit {
     );
   }
 
-
+  // Handle the event emitted from book-form.component
+  onBookAdded(newBook: any) {
+    this.newBook = newBook; // Store the newly added book
+    setTimeout(() => {
+      this.books.unshift(this.newBook); // Add the new book to the beginning of the list
+      this.newBook = null; // Reset the newBook variable
+    }, 0);
+  }
 }

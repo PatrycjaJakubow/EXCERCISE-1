@@ -1,3 +1,20 @@
-p {
+/* p {
     border: 1px solid black;
-}
+} */
+
+.book-detail-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .book-detail-container h2 {
+    color: #333;
+  }
+  
+  .book-detail-container p {
+    margin: 10px auto;
+    color: #666;
+  }
+  
