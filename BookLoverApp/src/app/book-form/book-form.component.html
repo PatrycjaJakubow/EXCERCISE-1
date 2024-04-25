@@ -1,21 +1,18 @@
 <div class="new-book" [formGroup]="bookForm">
-    <li>
-        <mat-form-field class="new-book-input">
-          <mat-label>Title: </mat-label>
-          <input matInput type="text"  formControlName="title">
-        </mat-form-field>
-    </li>
-    <li>
+  <li>
       <mat-form-field class="new-book-input">
-          <mat-label>Author: </mat-label>
-          <input matInput type="text"  formControlName="author">
-        </mat-form-field>
-    </li>
-    <li>
-      <mat-form-field class="new-book-input">
-          <mat-label>Has audio: </mat-label>
-          <input matInput type="text"  formControlName="has_audio">
-        </mat-form-field>
-    </li>
-    <button type="button" (click)="addBook()">Add book</button>
-  </div>
+        <mat-label>Title: </mat-label>
+        <input matInput type="text"  formControlName="title">
+      </mat-form-field>
+  </li>
+  <li>
+    <mat-form-field class="new-book-input">
+        <mat-label>Author: </mat-label>
+        <input matInput type="text"  formControlName="author">
+      </mat-form-field>
+  </li>
+  <li>
+      <mat-checkbox formControlName="has_audio" color="primary">Has audio</mat-checkbox>
+  </li>
+  <button type="button" (click)="addBook()">Add book</button>
+</div>

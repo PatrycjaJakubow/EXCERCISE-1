@@ -1,5 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-book-form',
@@ -14,7 +14,7 @@ export class BookFormComponent {
     this.bookForm = this.fb.group({
       title: ['', Validators.required],
       author: ['', Validators.required],
-      has_audio: ['', Validators.required]
+      has_audio: [false] // Initialize with false
     });
   }
 
@@ -30,7 +30,7 @@ export class BookFormComponent {
       this.bookAdded.emit(newBook);
 
       // Reset the form after adding the book
-      this.bookForm.reset();
+      this.bookForm.reset({ has_audio: false }); // Reset checkbox to false
     }
   }
 }

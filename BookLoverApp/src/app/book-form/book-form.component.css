@@ -25,12 +25,12 @@
   }
   
   .new-book-input {
-    width: calc(100% - 40px); /* Subtract padding */
+    width: calc(100% - 40px); 
     margin-bottom: 10px;
   }
   
   .new-book button {
-    background-color: #ff7f50; /* Coral */
+    background-color: #ff7f50; 
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -39,6 +39,6 @@
   }
   
   .new-book button:hover {
-    background-color: #ff6347; /* Tomato */
+    background-color: #ff6347; 
   }
   

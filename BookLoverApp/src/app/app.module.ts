@@ -18,13 +18,15 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from "@angular/forms";
 
-
+import {TuiCheckboxModule} from '@taiga-ui/kit';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,11 +49,14 @@ import {MatTableModule} from '@angular/material/table';
       MatInputModule,
       FormsModule,
 
+      TuiCheckboxModule,
+
       MatIconModule,
       MatButtonModule,
       MatFormFieldModule,
       MatListModule,
-      MatTableModule
+      MatTableModule,
+      MatCheckboxModule
 ],
   providers: [
     provideAnimationsAsync()
