@@ -1,49 +1,52 @@
 <div class="list-grid-container">
   <div class="div-buttons">
-    <button (click)="showList()"><i class="fas fa-list"></i></button>
+    <button (click)="showList()" class="display-button"><i class="fas fa-list"></i></button>
     <button (click)="showGrid()"><i class="fa-solid fa-table-cells-large"></i></button>
   </div>
 
-  <div *ngIf="isListView; else gridTemplate" class="list-container">
+  <div *ngIf="isListView; else gridTemplate" class="list-container" >
     <mat-table [dataSource]="books" class="mat-elevation-z8">
       <ng-container matColumnDef="title">
         <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
-        <mat-cell *matCellDef="let book"> {{book.title}} </mat-cell>
+        <mat-cell *matCellDef="let book" (click)="startEditing($event, book, 'title')">
+          <div [contentEditable]="isEditing && editField === 'title'" (blur)="updateValue($event, 'title', book)" class="list-input">{{ book.title }}</div>
+        </mat-cell>
       </ng-container>
       <ng-container matColumnDef="author">
         <mat-header-cell *matHeaderCellDef>Author</mat-header-cell>
-        <mat-cell *matCellDef="let book"> {{book.author}} </mat-cell>
+        <mat-cell *matCellDef="let book" (click)="startEditing($event, book, 'author')">
+          <div [contentEditable]="isEditing && editField === 'author'" (blur)="updateValue($event, 'author', book)" class="list-input">{{ book.author }}</div>
+        </mat-cell>
       </ng-container>
       <ng-container matColumnDef="availability">
         <mat-header-cell *matHeaderCellDef>Availability Status</mat-header-cell>
-        <mat-cell *matCellDef="let book"> {{book.availability}} </mat-cell>
+        <mat-cell *matCellDef="let book" (click)="startEditing($event, book, 'availability')">
+          <div [contentEditable]="isEditing && editField === 'availability'" (blur)="updateValue($event, 'availability', book)" class="list-input">{{ book.availability }}</div>
+        </mat-cell>
       </ng-container>
-
+  
       <mat-header-row *matHeaderRowDef="['title', 'author', 'availability']"></mat-header-row>
       <mat-row *matRowDef="let row; columns: ['title', 'author', 'availability']"></mat-row>
     </mat-table>
   </div>
+  
 
   <ng-template #gridTemplate>
     <div class="grid-container">
-      <div class="grid-item" *ngFor="let title of titles">
-        <div *ngIf="!isEditing; else editTemplate" class="title">{{ title.title }}</div>
-        <ng-template #editTemplate>
-          <input matInput type="text" [(ngModel)]="title.title" class="input">
-        </ng-template>
-
-        <div *ngIf="!isEditing" class="author">{{ title.author }}</div>
-        <ng-template #editTemplate>
-          <input matInput type="text" [(ngModel)]="title.author" class="inputs">
-        </ng-template>
-
-        <div *ngIf="!isEditing" class="availability">{{ title.availability }}</div>
-        <ng-template #editTemplate>
-          <input matInput type="text" [(ngModel)]="title.availability" class="inputs">
-        </ng-template>
-        <button *ngIf="!isEditing" (click)="editRow(title)">Edit</button>
-        <button *ngIf="isEditing" (click)="saveRow(title)">Save</button>
-        <button *ngIf="isEditing" (click)="cancelEdit()">Cancel</button>
+      <div class="grid-item" *ngFor="let book of books">
+        <ng-container *ngIf="!book.isEditing">
+          <div class="title" (click)="editTitle(book)">{{ book.title }}</div>
+          <div class="author" (click)="editAuthor(book)">{{ book.author }}</div>
+          <div class="availability" (click)="editAvailability(book)">{{ book.availability }}</div>
+        </ng-container>
+        <ng-container *ngIf="book.isEditing">
+          <input matInput type="text" [(ngModel)]="book.title" class="edit-input">
+          <input matInput type="text" [(ngModel)]="book.author" class="edit-input">
+          <input matInput type="text" [(ngModel)]="book.availability" class="edit-input">
+          <button (click)="saveRow(book)" class="btn-input">Save</button>
+          <button (click)="cancelEdit(book)" class="btn-input">Cancel</button>
+        </ng-container>
+        <button *ngIf="!book.isEditing" (click)="editRow(book)" class="btn-input">Edit</button>
       </div>
     </div>
   </ng-template>
