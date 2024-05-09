@@ -1,0 +1,26 @@
+<div>
+  <label for="cityInput">Enter City:</label>
+  <input type="text" [(ngModel)]="cityInput" id="cityInput">
+  <button (click)="getWeather()">Get Weather</button>
+</div>
+
+<div *ngIf="weatherData">
+  <h2>{{ weatherData.location.name }}, {{ weatherData.location.country }}</h2>
+  <p>Temperature: {{ weatherData.current.temp_c }}°C</p>
+  <p>Weather: {{ weatherData.current.condition.text }}</p>
+</div>
+
+
+
+<div *ngIf="futureWeatherData; else loading">
+  <h2>Weather forecast for tomorrow</h2>
+  <p>Temperature: {{ futureWeatherData.forecast.forecastday[0].day.maxtemp_c }}°C</p>
+  <p>Temperature: {{ futureWeatherData.forecast.forecastday[0].day.mintemp_c }}°C</p>
+  <p>Weather: {{ futureWeatherData.forecast.forecastday[0].day.condition.text }}</p>
+</div>
+
+<ng-template #loading>
+  <div>
+    <p>Loading...</p>
+  </div>
+</ng-template>
